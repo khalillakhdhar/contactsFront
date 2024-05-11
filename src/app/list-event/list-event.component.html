@@ -1,2 +1,26 @@
+<div *ngIf="events">
 <app-add-event></app-add-event>
-<p>list-event works!</p>
+<br>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+        <th>date</th>
+        <th>Lieu</th>
+        <th>Description</th>
+        <th>type</th>
+        <th>Action</th>
+    </tr>
+
+    </thead>
+    <tr *ngFor="let ev of events.content | paginate: { itemsPerPage: 2, currentPage: p }">
+        <td>{{ev.date}}</td>
+        <td>{{ev.lieu}}</td>
+        <td>{{ev.description}}</td>
+        <td>{{ev.type}}</td>
+        <td><button class="btn btn-danger"  (click)="deleteEvent(ev)" >Supprimer</button></td>
+        
+    </tr>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>
