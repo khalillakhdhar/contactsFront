@@ -11,6 +11,7 @@ export class ContactService {
   constructor(private http:HttpClient) { }
   getAllContacts(){
     return this.http.get(this.url);
+    // observable de liste de l'objet contact
   }
   getContactById(id:number)
   {

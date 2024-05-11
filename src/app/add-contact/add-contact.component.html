@@ -1,1 +1,51 @@
-<p>add-contact works!</p>
+
+<br>
+
+<!-- Button trigger modal -->
+<div class="text-center">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+Ajouter un contact
+</button>
+</div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Contact</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form (submit)="addContact()">
+            <div class="mb-3">
+                <label class="form-label">Nom</label>
+                <input type="text" name="nom" class="form-control" placeholder="votre nom ici" [(ngModel)]="contact.nom">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Prénom</label>
+                <input type="text" name="prenom" class="form-control" placeholder="votre prénom ici" [(ngModel)]="contact.prenom">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Téléphone</label>
+                <input type="text" name="tel" class="form-control" placeholder="votre telephone ici" [(ngModel)]="contact.telephone">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Adresse</label>
+                <textarea  name="adr" class="form-control" placeholder="votre adresse ici" [(ngModel)]="contact.adresse">
+                    </textarea>
+
+            </div>
+            <div class="mb-3 text-center">
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Ajouter</button>
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,2 +1,26 @@
 <app-add-contact></app-add-contact>
-<p>list-contacts works!</p>
+<br>
+<table class="table table-bordered table-responsive">
+<thead>
+    <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Telephone</th>
+        <th>Adresse</th>
+    </tr>
+
+</thead>
+<tbody>
+<tr *ngFor="let ct of contacts.content">
+    <td>{{ct.nom}}</td>
+    <td>{{ct.prenom}}</td>
+    <td>{{ct.telephone}}</td>
+    <td>{{ct.adresse}}</td>
+
+</tr>
+
+</tbody>
+
+
+
+</table>
